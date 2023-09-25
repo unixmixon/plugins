@@ -1160,7 +1160,7 @@
           extract.episode.forEach(function (episode) {
             items.push({
               title: 'S' + ses + ' / ' + episode.name,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 2160p',
               info: ' / ' + voice.name,
               season: parseInt(ses),
               episode: parseInt(episode.id),
@@ -1171,7 +1171,7 @@
           extract.voice.forEach(function (voice) {
             items.push({
               title: voice.name || select_title,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 2160p',
               info: '',
               voice: voice
             });
@@ -1916,7 +1916,7 @@
             if (episode.season_id == season_id) {
               filtred.push({
                 title: 'S' + episode.season_id + ' / ' + episode.name,
-                quality: '360p ~ 1080p',
+                quality: '360p ~ 2160p',
                 info: ' / ' + voice,
                 season: parseInt(episode.season_id),
                 episode: parseInt(episode.episode_id),
@@ -1928,7 +1928,7 @@
           extract.voice.forEach(function (voice) {
             filtred.push({
               title: voice.name || select_title,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 2160p',
               info: '',
               media: voice
             });
@@ -2789,7 +2789,7 @@
                 if (prefer_http) file = file.replace('https://', 'http://');
                 filtred.push({
                   title: episode.title,
-                  quality: '360p ~ 1080p',
+                  quality: '360p ~ 2160p',
                   info: audio_names.length ? ' / ' + component.uniqueNamesShortText(audio_names, 80) : '',
                   season: season.season,
                   episode: parseInt(episode.episode),
@@ -2834,7 +2834,7 @@
           if (prefer_http) file = file.replace('https://', 'http://');
           filtred.push({
             title: extract.title || select_title,
-            quality: max_quality ? max_quality + 'p' : '360p ~ 1080p',
+            quality: max_quality ? max_quality + 'p' : '360p ~ 2160p',
             info: audio_names.length ? ' / ' + component.uniqueNamesShortText(audio_names, 80) : '',
             file: file,
             subtitles: extract.source.cc ? extract.source.cc.map(function (c) {
@@ -3137,7 +3137,7 @@
             }
 
             return {
-              label: quality ? quality + 'p' : '360p ~ 1080p',
+              label: quality ? quality + 'p' : '360p ~ 2160p',
               quality: quality,
               file: link.indexOf('://') == -1 ? base_url + '/' + (link.startsWith('/') ? link.substring(1) : link) : link
             };
@@ -3358,7 +3358,7 @@
                       var season_num = parseInt(s_title.match(/\d+/));
                       filtred.push({
                         title: 'S' + season_num + ' / ' + Lampa.Lang.translate('torrent_serial_episode') + ' ' + episode_num,
-                        quality: '360p ~ 1080p',
+                        quality: '360p ~ 2160p',
                         info: ' / ' + Lampa.Utils.shortText(voice, 50),
                         season: season_num,
                         episode: episode_num,
@@ -3373,7 +3373,7 @@
           } else {
             filtred.push({
               title: data.title || data.comment || select_title,
-              quality: '360p ~ 1080p',
+              quality: '360p ~ 2160p',
               info: '',
               file: data.file,
               subtitles: parseSubs(data.subtitle)
@@ -4340,7 +4340,7 @@
                       var season_num = parseInt(s_title.match(/\d+/));
                       filtred.push({
                         title: 'S' + season_num + ' / ' + Lampa.Lang.translate('torrent_serial_episode') + ' ' + episode_num,
-                        quality: max_quality.label || '360p ~ 1080p',
+                        quality: max_quality.label || '360p ~ 2160p',
                         info: ' / ' + Lampa.Utils.shortText(voice, 50),
                         season: season_num,
                         episode: episode_num,
@@ -4355,7 +4355,7 @@
             var max_quality = data.media.items[0] || {};
             filtred.push({
               title: data.title || data.comment || select_title,
-              quality: max_quality.label || '360p ~ 1080p',
+              quality: max_quality.label || '360p ~ 2160p',
               info: '',
               media: data.media
             });
@@ -4716,7 +4716,7 @@
                 var season_num = choice.season + 1;
                 filtred.push({
                   title: 'S' + season_num + ' / ' + Lampa.Lang.translate('torrent_serial_episode') + ' ' + episode_num,
-                  quality: max_quality.label || '360p ~ 1080p',
+                  quality: max_quality.label || '360p ~ 2160p',
                   info: ' / ' + Lampa.Utils.shortText(voice, 50),
                   season: season_num,
                   episode: episode_num,
@@ -4732,7 +4732,7 @@
             var max_quality = data.media.items[0] || {};
             filtred.push({
               title: data.title || data.comment || select_title,
-              quality: max_quality.label || '360p ~ 1080p',
+              quality: max_quality.label || '360p ~ 2160p',
               info: '',
               media: data.media
             });
@@ -5160,7 +5160,7 @@
           var max_quality = data.media.items[0] || {};
           filtred.push({
             title: data.title || data.comment || select_title,
-            quality: max_quality.label || '360p ~ 1080p',
+            quality: max_quality.label || '360p ~ 2160p',
             info: '',
             media: data.media
           });
@@ -5511,7 +5511,7 @@
               filtred.push({
                 title: extract.ru_title || extract.en_title || select_title,
                 orig_title: extract.en_title || extract.ru_title || select_title,
-                quality: items[0] ? items[0].label : '360p ~ 1080p',
+                quality: items[0] ? items[0].label : '360p ~ 2160p',
                 info: '',
                 media: items
               });
@@ -5528,7 +5528,7 @@
               filtred.push({
                 title: title,
                 orig_title: extract.en_title || extract.ru_title || select_title,
-                quality: _items[0] ? _items[0].label : '360p ~ 1080p',
+                quality: _items[0] ? _items[0].label : '360p ~ 2160p',
                 info: '',
                 season: 1,
                 episode: parseInt(_episode.episode),
@@ -6020,7 +6020,7 @@
               filtred.push({
                 title: title,
                 orig_title: translation.title_orig || translation.title || select_title,
-                quality: translation.quality || '360p ~ 1080p',
+                quality: translation.quality || '360p ~ 2160p',
                 info: ' / ' + voice_name,
                 season: '' + season_id,
                 episode: parseInt(episode_id),
@@ -6034,7 +6034,7 @@
             filtred.push({
               title: c.translation && c.translation.title || select_title,
               orig_title: c.title_orig || c.title || select_title,
-              quality: c.quality || '360p ~ 1080p',
+              quality: c.quality || '360p ~ 2160p',
               info: '',
               link: c.link
             });
@@ -6125,7 +6125,7 @@
             if (link.startsWith('//')) link = (prefer_http ? 'http:' : 'https:') + link;
             if (prefer_mp4) ;
             items.push({
-              label: quality ? quality + 'p' : '360p ~ 1080p',
+              label: quality ? quality + 'p' : '360p ~ 2160p',
               quality: quality,
               file: link
             });
@@ -6487,7 +6487,7 @@
         var items = [];
         var files = media.files || [];
         files.forEach(function (file) {
-          var label = file.quality || file.h && file.h + 'p' || '360p ~ 1080p';
+          var label = file.quality || file.h && file.h + 'p' || '360p ~ 2160p';
 
           if (file.url) {
             var subtitles = false;
@@ -6759,7 +6759,7 @@
             filtred.push({
               title: title,
               orig_title: extract.title || select_title,
-              quality: extract.quality ? extract.quality + 'p' : '360p ~ 1080p',
+              quality: extract.quality ? extract.quality + 'p' : '360p ~ 2160p',
               info: voice_name ? ' / ' + voice_name : '',
               season: '' + season.number,
               episode: parseInt(episode.number),
@@ -6786,7 +6786,7 @@
             filtred.push({
               title: title,
               orig_title: extract.title || select_title,
-              quality: extract.quality ? extract.quality + 'p' : '360p ~ 1080p',
+              quality: extract.quality ? extract.quality + 'p' : '360p ~ 2160p',
               info: voice_name ? ' / ' + voice_name : '',
               season: 1,
               episode: parseInt(episode_num),
@@ -6806,7 +6806,7 @@
               filtred.push({
                 title: getVoiceName(audio, true) || video.title || select_title,
                 orig_title: extract.title || select_title,
-                quality: extract.quality ? extract.quality + 'p' : '360p ~ 1080p',
+                quality: extract.quality ? extract.quality + 'p' : '360p ~ 2160p',
                 info: audio.codec && audio.codec !== 'aac' ? ' / ' + audio.codec : '',
                 audio_index: audio.index,
                 media: video
@@ -7151,7 +7151,7 @@
               for (var e_num in episodes) {
                 filtred.push({
                   title: 'S' + s_num + ' / ' + Lampa.Lang.translate('torrent_serial_episode') + ' ' + e_num,
-                  quality: (episodes[e_num] ? episodes[e_num] + 'p' : v.max_qual ? v.max_qual + 'p' : '360p ~ 1080p') + (v.quality ? ' - ' + v.quality : ''),
+                  quality: (episodes[e_num] ? episodes[e_num] + 'p' : v.max_qual ? v.max_qual + 'p' : '360p ~ 2160p') + (v.quality ? ' - ' + v.quality : ''),
                   info: ' / ' + Lampa.Utils.shortText(voice, 50),
                   season: s_num,
                   episode: e_num,
@@ -7165,7 +7165,7 @@
             var voice = v.translation + (v.studio ? ' (' + v.studio + ')' : '');
             filtred.push({
               title: voice,
-              quality: (v.max_qual ? v.max_qual + 'p' : '360p ~ 1080p') + (v.quality ? ' - ' + v.quality : ''),
+              quality: (v.max_qual ? v.max_qual + 'p' : '360p ~ 2160p') + (v.quality ? ' - ' + v.quality : ''),
               info: '',
               media: v
             });
@@ -7709,7 +7709,7 @@
                   translation.seasons[keys].forEach(function (episode) {
                     filtred.push({
                       title: 'S' + episode.season + ' / ' + Lampa.Lang.translate('torrent_serial_episode') + ' ' + episode.episode,
-                      quality: '360p ~ 1080p' + (translation.quality ? ' - ' + translation.quality : ''),
+                      quality: '360p ~ 2160p' + (translation.quality ? ' - ' + translation.quality : ''),
                       info: ' / ' + filter_items.voice[choice.voice],
                       season: episode.season,
                       episode: episode.episode,
@@ -7723,7 +7723,7 @@
           } else {
             filtred.push({
               title: Lampa.Utils.capitalizeFirstLetter(translation.translation) || select_title,
-              quality: '360p ~ 1080p' + (translation.quality ? ' - ' + translation.quality : ''),
+              quality: '360p ~ 2160p' + (translation.quality ? ' - ' + translation.quality : ''),
               info: '',
               media: translation.media,
               translation: translation
@@ -7740,7 +7740,7 @@
             var link = playlists[key];
             var quality = parseInt(key);
             items.push({
-              label: quality ? quality + 'p' : '360p ~ 1080p',
+              label: quality ? quality + 'p' : '360p ~ 2160p',
               quality: quality,
               file: link
             });
